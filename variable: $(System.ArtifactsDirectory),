@@ -1,0 +1,10 @@
+..
+          – task: Bash@3
+            inputs:
+              targetType: 'inline'
+              script: |
+                cd $(System.ArtifactsDirectory)
+                unzip ./drop/liquibase-demo.zip -d liquibase-demo
+                cd ./liquibase-demo
+                java -jar ./lib/liquibase-core-3.3.0.jar –defaultsFile=./src/main/resources/liquibase.properties update
+           ..
