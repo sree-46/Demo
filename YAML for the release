@@ -1,0 +1,9 @@
+..
+          – task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: 'current'
+              downloadType: 'single'
+              artifactName: drop
+              itemPattern: '**/*.zip'
+              downloadPath: '$(System.ArtifactsDirectory)'
+           ..
